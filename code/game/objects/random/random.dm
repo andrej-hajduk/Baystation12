@@ -274,7 +274,8 @@
 	icon_state = "revolver"
 
 /obj/random/projectile/spawn_choices()
-	return list(/obj/item/gun/projectile/heavysniper/boltaction = 4,
+	return list(/obj/item/gun/projectile/automatic/battlerifle = 4,
+				/obj/item/gun/projectile/automatic/semistrip = 4,
 				/obj/item/gun/projectile/shotgun/pump = 3,
 				/obj/item/gun/projectile/automatic/merc_smg = 2,
 				/obj/item/gun/projectile/automatic/assault_rifle = 2,
@@ -432,8 +433,8 @@ obj/random/closet //A couple of random closets to spice up maint
 	icon_state = "base"
 	var/vermin_chance = 5
 	var/list/locker_vermin = list(
-		/mob/living/simple_animal/mouse,
-		/mob/living/simple_animal/opossum,
+		/mob/living/simple_animal/friendly/mouse,
+		/mob/living/simple_animal/friendly/opossum,
 		/mob/living/carbon/alien/diona
 	)
 
@@ -1077,8 +1078,7 @@ something, make sure it's not in one of the other lists.*/
 obj/random/hostile/spawn_choices()
 	return list(/mob/living/simple_animal/hostile/viscerator,
 				/mob/living/simple_animal/hostile/carp,
-				/mob/living/simple_animal/hostile/carp/pike,
-				/mob/living/simple_animal/hostile/vagrant/swarm)
+				/mob/living/simple_animal/hostile/carp/pike)
 
 /*
 	Selects one spawn point out of a group of points with the same ID and asks it to generate its items

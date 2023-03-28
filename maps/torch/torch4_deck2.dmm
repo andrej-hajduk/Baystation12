@@ -1116,6 +1116,8 @@
 /obj/item/aicard,
 /obj/item/clothing/gloves/insulated,
 /obj/item/clothing/gloves/insulated,
+/obj/item/device/radio/headset/headset_eng,
+/obj/item/device/radio/headset/headset_eng,
 /obj/item/device/multitool{
 	pixel_x = 3
 	},
@@ -2789,6 +2791,7 @@
 	pixel_x = -22;
 	pixel_y = 0
 	},
+/obj/random_multi/single_item/piano,
 /turf/simulated/floor/plating,
 /area/vacant/chapel)
 "fg" = (
@@ -8000,6 +8003,11 @@
 	name = "Deck Three Port status indicator";
 	pixel_x = 8;
 	pixel_y = -24
+	},
+/obj/item/paper{
+	desc = "";
+	info = "To turn on burn mode, toggle the fuel mode then wait 15 seconds and press the ignition switch. If indicator light turns red, press the corresponding vent button. When disabling burn mode, vent all chambers to prevent a blowout.";
+	name = "Burn mode instructions"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engineering_monitoring)

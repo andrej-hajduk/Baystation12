@@ -2095,7 +2095,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/machinery/computer/ship/sensors{
+/obj/machinery/computer/ship/sensors/spacer{
 	dir = 4
 	},
 /obj/item/device/radio/intercom/map_preset/scavver{
@@ -3026,7 +3026,7 @@
 /obj/item/storage/box/donkpockets,
 /obj/item/material/kitchen/utensil/spork,
 /obj/random/loot,
-/mob/living/simple_animal/mouse/brown/Tom,
+/mob/living/simple_animal/friendly/mouse/brown/Tom,
 /turf/simulated/floor/wood/yew,
 /area/scavver/hab)
 "wQ" = (
@@ -3939,7 +3939,7 @@
 /turf/simulated/floor/airless,
 /area/scavver/yachtup)
 "FK" = (
-/obj/machinery/computer/ship/sensors{
+/obj/machinery/computer/ship/sensors/spacer{
 	dir = 8
 	},
 /obj/structure/cable{

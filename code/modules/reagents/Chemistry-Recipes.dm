@@ -590,20 +590,6 @@
 	e.start()
 	holder.clear_reagents()
 
-/datum/chemical_reaction/phlogiston
-	name = "Phlogiston"
-	result = null
-	required_reagents = list(/datum/reagent/aluminium = 1, /datum/reagent/toxin/phoron = 1, /datum/reagent/acid = 1 )
-	result_amount = 1
-	mix_message = "The solution thickens and begins to bubble."
-
-/datum/chemical_reaction/phlogiston/on_reaction(var/datum/reagents/holder, var/created_volume, var/reaction_flags)
-	..()
-	var/turf/location = get_turf(holder.my_atom.loc)
-	for(var/turf/simulated/floor/target_tile in range(0,location))
-		target_tile.assume_gas(/datum/reagent/toxin/phoron, created_volume, 400+T0C)
-		addtimer(CALLBACK(target_tile, /turf/proc/hotspot_expose, 700, 400), 0)
-
 /datum/chemical_reaction/napalm
 	name = "Napalm"
 	result = /datum/reagent/napalm
@@ -1005,13 +991,13 @@
 	result_amount = 1
 	required = /obj/item/slime_extract/gold
 	var/list/possible_mobs = list(
-							/mob/living/simple_animal/cat,
-							/mob/living/simple_animal/cat/kitten,
-							/mob/living/simple_animal/corgi,
-							/mob/living/simple_animal/corgi/puppy,
-							/mob/living/simple_animal/cow,
-							/mob/living/simple_animal/chick,
-							/mob/living/simple_animal/chicken
+							/mob/living/simple_animal/friendly/cat,
+							/mob/living/simple_animal/friendly/cat/kitten,
+							/mob/living/simple_animal/friendly/corgi,
+							/mob/living/simple_animal/friendly/corgi/puppy,
+							/mob/living/simple_animal/friendly/cow,
+							/mob/living/simple_animal/friendly/chick,
+							/mob/living/simple_animal/friendly/chicken
 							)
 
 /datum/chemical_reaction/slime/crit/on_reaction(var/datum/reagents/holder)

@@ -1244,7 +1244,9 @@
 /area/voxship/thrusters)
 "cQ" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/obj/machinery/igniter,
+/obj/machinery/igniter{
+	id_tag = "Voxship_igniter"
+	},
 /turf/simulated/floor/reinforced/airless,
 /area/voxship/thrusters)
 "cR" = (
@@ -1314,9 +1316,6 @@
 /turf/simulated/floor/tiled/techmaint/vox,
 /area/voxship/fore)
 "cW" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1325,10 +1324,13 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/light/small,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4;
+	level = 2
+	},
 /turf/simulated/floor/tiled/techmaint/vox,
 /area/voxship/fore)
 "cX" = (
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -1337,6 +1339,8 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/effect/shuttle_landmark/vox_base/hangar/vox_ship,
+/obj/machinery/hologram/holopad/longrange,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /turf/simulated/floor/tiled/techmaint/vox,
 /area/voxship/fore)
 "cY" = (
@@ -1349,7 +1353,6 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -1358,6 +1361,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/vox,
 /area/voxship/fore)
 "cZ" = (
@@ -1536,7 +1540,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/voxship/thrusters)
 "dq" = (
-/obj/machinery/computer/ship/sensors{
+/obj/machinery/computer/ship/sensors/vox{
 	dir = 1;
 	icon_state = "computer"
 	},
@@ -1580,10 +1584,10 @@
 	icon_state = "4-8";
 	pixel_y = 0
 	},
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/vox,
 /area/voxship/fore)
 "du" = (
@@ -2152,6 +2156,10 @@
 /obj/machinery/atmospherics/omni/mixer,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/button/ignition{
+	id_tag = "Voxship_igniter";
+	pixel_y = -25
 	},
 /turf/simulated/floor/tiled/techmaint/vox,
 /area/voxship/thrusters)
@@ -3089,7 +3097,7 @@
 /turf/simulated/floor/tiled/techmaint/vox,
 /area/voxship/shuttle)
 "ha" = (
-/obj/machinery/computer/ship/sensors{
+/obj/machinery/computer/ship/sensors/vox{
 	dir = 1;
 	icon_state = "computer"
 	},
@@ -3162,6 +3170,22 @@
 /obj/machinery/telecomms/broadcaster/map_preset/voxship,
 /turf/simulated/floor/plating/vox,
 /area/voxship/thrusters)
+"Gf" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/vox,
+/area/voxship/fore)
 "Lj" = (
 /turf/simulated/wall/r_titanium,
 /area/space)
@@ -7092,7 +7116,7 @@ ar
 ar
 ar
 cw
-cZ
+Gf
 ar
 dS
 ar

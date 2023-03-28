@@ -5,6 +5,8 @@
 	else
 		add_to_living_mob_list()
 
+	selected_image = image(icon('icons/misc/buildmode.dmi'), loc = src, icon_state = "ai_sel")
+
 /mob/living/examine(mob/user, distance, infix, suffix)
 	. = ..()
 	if (admin_paralyzed)
@@ -787,7 +789,9 @@ default behaviour is:
 	return 1
 
 /mob/living/reset_layer()
-	if(hiding)
+	if (jumping)
+		layer = VEHICLE_LOAD_LAYER
+	else if (hiding)
 		layer = HIDING_MOB_LAYER
 	else
 		..()
@@ -810,6 +814,8 @@ default behaviour is:
 	if(auras)
 		for(var/a in auras)
 			remove_aura(a)
+
+	qdel(selected_image)
 	return ..()
 
 /mob/living/proc/melee_accuracy_mods()
@@ -842,11 +848,13 @@ default behaviour is:
 	return TRUE
 
 /mob/living/handle_drowning()
+	var/turf/T = get_turf(src)
 	if(!can_drown() || !loc.is_flooded(lying))
+		return FALSE
+	if(!lying && T.above && !T.above.is_flooded() && T.above.CanZPass(src, UP) && can_overcome_gravity())
 		return FALSE
 	if(prob(5))
 		to_chat(src, SPAN_DANGER("You choke and splutter as you inhale water!"))
-	var/turf/T = get_turf(src)
 	T.show_bubbles()
 	return TRUE // Presumably chemical smoke can't be breathed while you're underwater.
 
@@ -882,3 +890,11 @@ default behaviour is:
 
 /mob/living/proc/InStasis()
 	return FALSE
+
+/mob/living/proc/jump_layer_shift()
+	jumping = TRUE
+	reset_layer()
+
+/mob/living/proc/jump_layer_shift_end()
+	jumping = FALSE
+	reset_layer()

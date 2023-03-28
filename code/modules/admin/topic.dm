@@ -237,10 +237,10 @@
 			if("slime")				M.change_mob_type( /mob/living/carbon/slime , null, null, delmob )
 			if("monkey")			M.change_mob_type( /mob/living/carbon/human/monkey , null, null, delmob )
 			if("robot")				M.change_mob_type( /mob/living/silicon/robot , null, null, delmob )
-			if("cat")				M.change_mob_type( /mob/living/simple_animal/cat , null, null, delmob )
-			if("runtime")			M.change_mob_type( /mob/living/simple_animal/cat/fluff/Runtime , null, null, delmob )
-			if("corgi")				M.change_mob_type( /mob/living/simple_animal/corgi , null, null, delmob )
-			if("ian")				M.change_mob_type( /mob/living/simple_animal/corgi/Ian , null, null, delmob )
+			if("cat")				M.change_mob_type( /mob/living/simple_animal/friendly/cat , null, null, delmob )
+			if("runtime")			M.change_mob_type( /mob/living/simple_animal/friendly/cat/fluff/Runtime , null, null, delmob )
+			if("corgi")				M.change_mob_type( /mob/living/simple_animal/friendly/corgi , null, null, delmob )
+			if("ian")				M.change_mob_type( /mob/living/simple_animal/friendly/corgi/Ian , null, null, delmob )
 			if("crab")				M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
 			if("coffee")			M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
 			if("parrot")			M.change_mob_type( /mob/living/simple_animal/hostile/retaliate/parrot , null, null, delmob )
@@ -1224,7 +1224,7 @@
 
 		if(config.allow_admin_rev)
 			L.revive()
-			log_and_message_admins("healed / Rrvived [key_name(L)]")
+			log_and_message_admins("healed / Revived [key_name(L)]")
 		else
 			to_chat(usr, "Admin Rejuvinates have been disabled")
 
@@ -1523,7 +1523,7 @@
 		var/obj/item/fax = locate(href_list["AdminFaxView"])
 		if (istype(fax, /obj/item/paper))
 			var/obj/item/paper/P = fax
-			P.show_content(usr,1)
+			P.show_content(usr, TRUE)
 		else if (istype(fax, /obj/item/photo))
 			var/obj/item/photo/H = fax
 			H.show(usr)
@@ -1548,7 +1548,7 @@
 
 		if (istype(bundle.pages[page], /obj/item/paper))
 			var/obj/item/paper/P = bundle.pages[page]
-			P.show_content(src.owner, 1)
+			P.show_content(src.owner, TRUE)
 		else if (istype(bundle.pages[page], /obj/item/photo))
 			var/obj/item/photo/H = bundle.pages[page]
 			H.show(src.owner)

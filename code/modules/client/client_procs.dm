@@ -397,7 +397,7 @@ client/verb/character_setup()
 	set name = "Character Setup"
 	set category = "OOC"
 	if(prefs)
-		prefs.ShowChoices(usr)
+		prefs.open_setup_window(usr)
 
 /client/proc/apply_fps(var/client_fps)
 	if(world.byond_version >= 511 && byond_version >= 511 && client_fps >= CLIENT_MIN_FPS && client_fps <= CLIENT_MAX_FPS)
@@ -408,6 +408,11 @@ client/verb/character_setup()
 	var/mob/living/M = mob
 	if(istype(M))
 		M.OnMouseDrag(src_object, over_object, src_location, over_location, src_control, over_control, params)
+
+	var/datum/click_handler/build_mode/B = M.GetClickHandler()
+	if (istype(B))
+		if(B.current_build_mode && src_control == "mapwindow.map" && src_control == over_control)
+			build_drag(src,B.current_build_mode,src_object,over_object,src_location,over_location,src_control,over_control,params)
 
 /client/verb/toggle_fullscreen()
 	set name = "Toggle Fullscreen"

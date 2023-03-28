@@ -993,13 +993,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/crew_quarters/safe_room/firstdeck)
 "abZ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 6
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1076,18 +1076,6 @@
 	dir = 4;
 	target_pressure = 15000
 	},
-/turf/simulated/floor/plating,
-/area/thruster/d1starboard)
-"aci" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/thruster/d1starboard)
 "acj" = (
@@ -1219,10 +1207,10 @@
 	pixel_x = 0;
 	pixel_y = -24
 	},
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 2
-	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
 "acv" = (
@@ -1557,22 +1545,12 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1starboard)
-"add" = (
-/obj/machinery/atmospherics/binary/pump/high_power/on{
-	dir = 4;
-	target_pressure = 15000
-	},
-/obj/effect/floor_decal/industrial/outline/orange,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/thruster/d1starboard)
 "ade" = (
 /obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
 "adf" = (
@@ -1918,7 +1896,6 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/industrial/warning,
-/obj/machinery/meter,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
 "adH" = (
@@ -1944,16 +1921,11 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "adI" = (
-/obj/machinery/atmospherics/binary/passive_gate/on{
-	dir = 4;
-	max_pressure_setting = 35000;
-	regulate_mode = 2;
-	target_pressure = 35000;
-	use_power = 1
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
@@ -2521,6 +2493,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
@@ -3247,11 +3222,11 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
 "afz" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 6
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/atmospherics/valve/digital{
+	id_tag = "fuelmode"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
@@ -3792,9 +3767,8 @@
 /area/medical/staging)
 "agy" = (
 /obj/machinery/atmospherics/binary/passive_gate/on{
-	dir = 2;
-	regulate_mode = 1;
-	target_pressure = 35000;
+	id_tag = "fuelmode";
+	target_pressure = 2000;
 	use_power = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -4876,7 +4850,8 @@
 /area/maintenance/firstdeck/aftstarboard)
 "aiI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
-/turf/simulated/wall/r_wall/hull,
+/obj/structure/sign/warning/hot_exhaust,
+/turf/simulated/wall/ocp_wall,
 /area/thruster/d1starboard)
 "aiK" = (
 /obj/effect/floor_decal/techfloor{
@@ -6549,7 +6524,7 @@
 /area/medical/foyer)
 "aqT" = (
 /obj/machinery/door/airlock/medical{
-	name = "Physicians Paperwork Office"
+	name = "Medical Paperwork Office"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -6560,7 +6535,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "arb" = (
 /obj/machinery/door/airlock/vault/bolted{
 	autoset_access = 0;
@@ -6764,7 +6739,7 @@
 	},
 /obj/machinery/papershredder,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "ask" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6935,7 +6910,7 @@
 /obj/item/folder/white,
 /obj/effect/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "atg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -6945,7 +6920,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "atm" = (
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
@@ -7130,11 +7105,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/exam_room)
 "aub" = (
-/obj/structure/table/standard,
-/obj/effect/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/medical/exam_room)
-"auc" = (
 /obj/machinery/vending/wallmed1{
 	dir = 8;
 	icon_state = "wallmed";
@@ -7142,16 +7112,22 @@
 	pixel_x = 28;
 	pixel_y = 0
 	},
+/obj/structure/bed/chair/comfy/blue{
+	dir = 8
+	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
 	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
-/obj/structure/bed/chair/comfy/blue{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/white,
+/area/medical/exam_room)
+"auc" = (
+/obj/effect/floor_decal/corner/paleblue/mono,
+/obj/structure/table/standard,
+/obj/item/paper_bin,
+/turf/simulated/floor/tiled/white/monotile,
 /area/medical/exam_room)
 "aug" = (
 /obj/effect/floor_decal/corner/paleblue{
@@ -7427,9 +7403,6 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 5
-	},
 /obj/machinery/camera/network/medbay{
 	c_tag = "Infirmary - Examination Room";
 	dir = 1
@@ -7443,11 +7416,10 @@
 "avq" = (
 /obj/item/stool/padded,
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small,
 /obj/random_multi/single_item/runtime,
 /obj/random_multi/single_item/skelestand,
+/obj/structure/curtain/open/bed,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/exam_room)
 "avs" = (
@@ -7466,7 +7438,7 @@
 	pixel_x = -37
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "avu" = (
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
@@ -7482,7 +7454,7 @@
 	pixel_y = -28
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "avx" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9463,8 +9435,8 @@
 /obj/item/clothing/shoes/dutyboots,
 /obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/glasses/tacgoggles,
-/obj/item/clothing/suit/armor/pcarrier/blue/sol,
-/obj/item/clothing/head/helmet/solgov,
+/obj/item/clothing/suit/armor/pcarrier/medium/sol,
+/obj/item/clothing/head/helmet,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/command/armoury/tactical)
 "aEH" = (
@@ -11864,7 +11836,11 @@
 /area/thruster/d1port)
 "aPs" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
-/turf/simulated/wall/r_wall/hull,
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1;
+	icon_state = "fire"
+	},
+/turf/simulated/wall/ocp_wall,
 /area/thruster/d1port)
 "aPu" = (
 /turf/simulated/floor/tiled/dark/monotile,
@@ -12543,8 +12519,7 @@
 "aRj" = (
 /obj/machinery/atmospherics/binary/passive_gate/on{
 	dir = 1;
-	regulate_mode = 1;
-	target_pressure = 35000;
+	target_pressure = 2000;
 	use_power = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -12989,21 +12964,20 @@
 /turf/simulated/floor/reinforced,
 /area/thruster/d1port)
 "aSk" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 5
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/atmospherics/valve/digital{
+	id_tag = "fuelmode"
+	},
+/obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
 "aSl" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
 "aSm" = (
@@ -13153,6 +13127,9 @@
 	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
@@ -13379,7 +13356,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/meter,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
 "aTn" = (
@@ -13392,8 +13368,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
@@ -13402,14 +13378,9 @@
 	dir = 1;
 	icon_state = "warningcorner"
 	},
-/obj/machinery/atmospherics/binary/passive_gate/on{
-	dir = 4;
-	max_pressure_setting = 35000;
-	regulate_mode = 2;
-	target_pressure = 35000;
-	use_power = 1
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 4
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
 "aTp" = (
@@ -13637,22 +13608,12 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1port)
-"aTX" = (
-/obj/machinery/atmospherics/binary/pump/high_power/on{
-	dir = 4;
-	target_pressure = 15000
-	},
-/obj/effect/floor_decal/industrial/outline/orange,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/thruster/d1port)
 "aTY" = (
 /obj/machinery/meter,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
 "aTZ" = (
@@ -13927,14 +13888,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
 "aUy" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 5
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1port)
@@ -14626,7 +14587,7 @@
 /area/hallway/primary/firstdeck/fore)
 "bbb" = (
 /obj/machinery/atmospherics/binary/pump/high_power/on{
-	dir = 2
+	target_pressure = 3000
 	},
 /turf/simulated/wall/ocp_wall,
 /area/thruster/d1starboard)
@@ -14938,18 +14899,6 @@
 "btE" = (
 /turf/simulated/floor/tiled/dark,
 /area/security/questioning)
-"bvI" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/thruster/d1port)
 "bvY" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4;
@@ -14978,7 +14927,8 @@
 /area/assembly/chargebay)
 "byb" = (
 /obj/machinery/atmospherics/binary/pump/high_power/on{
-	dir = 1
+	dir = 1;
+	target_pressure = 3000
 	},
 /turf/simulated/wall/ocp_wall,
 /area/thruster/d1port)
@@ -15206,7 +15156,7 @@
 /obj/effect/floor_decal/corner/paleblue/mono,
 /obj/structure/table/glass,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "bMb" = (
 /turf/simulated/wall/prepainted,
 /area/engineering/hardstorage/aux)
@@ -15529,9 +15479,7 @@
 /area/shuttle/escape_pod17/station)
 "cbj" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/machinery/computer/modular/preset/medical{
-	dir = 8
-	},
+/obj/machinery/computer/modular/preset/medical,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -16875,7 +16823,7 @@
 	pixel_x = 21
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "dTb" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 8;
@@ -16896,6 +16844,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/medical/morgue/autopsy)
+"dVp" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,
+/turf/simulated/floor/tiled/techfloor,
+/area/thruster/d1starboard)
 "dVw" = (
 /turf/simulated/wall/r_wall/hull,
 /area/command/armoury/tactical)
@@ -17208,7 +17163,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "epb" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -17723,7 +17678,7 @@
 	},
 /obj/structure/bed/chair/comfy/blue,
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "frA" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4;
@@ -17776,6 +17731,10 @@
 /obj/item/device/integrated_circuit_printer,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/misc_lab)
+"fBP" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/ocp_wall,
+/area/thruster/d1port)
 "fCb" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
@@ -18445,7 +18404,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "gGO" = (
 /obj/item/device/radio/intercom/department/security{
 	pixel_y = 23
@@ -18781,6 +18740,10 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery2)
+"hkQ" = (
+/obj/structure/sign/warning/vent_port,
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1starboard)
 "hlb" = (
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
@@ -18862,6 +18825,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/opscheck)
+"hqs" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/thruster/d1port)
 "hrb" = (
 /obj/effect/wallframe_spawn/reinforced,
 /obj/machinery/door/blast/shutters{
@@ -19336,8 +19311,15 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
+/obj/random_multi/single_item/runtime,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
+"hPp" = (
+/obj/structure/sign/warning/vent_port{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall/hull,
+/area/thruster/d1port)
 "hPt" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -19355,6 +19337,13 @@
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/techfloor,
 /area/engineering/hardstorage/aux)
+"hQd" = (
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1;
+	icon_state = "fire"
+	},
+/turf/simulated/wall/ocp_wall,
+/area/thruster/d1starboard)
 "hUb" = (
 /obj/machinery/door/blast/shutters{
 	density = 0;
@@ -19602,7 +19591,7 @@
 /obj/structure/table/glass,
 /obj/random/smokes,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "iqb" = (
 /obj/structure/bed/chair/comfy/lime,
 /turf/simulated/floor/tiled/dark,
@@ -19975,10 +19964,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard)
 "iMW" = (
-/obj/structure/bed/chair/padded/blue{
-	dir = 4;
-	icon_state = "chair_preview"
-	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
 	},
@@ -20003,6 +19988,11 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralport)
+"iOh" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/random_multi/single_item/piano,
+/turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/centralport)
 "iPb" = (
 /obj/machinery/door/blast/regular{
@@ -21191,9 +21181,6 @@
 /turf/simulated/floor/tiled,
 /area/assembly/robotics/office)
 "kfG" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 6
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1starboard)
 "kgi" = (
@@ -21543,9 +21530,6 @@
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
-/obj/effect/floor_decal/corner/paleblue{
-	dir = 5
-	},
 /obj/machinery/button/alternate/door{
 	id_tag = "examdoor";
 	name = "Examination Room Door Control";
@@ -21671,12 +21655,10 @@
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics/laboratory)
 "kPp" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/tiled/techfloor,
 /area/thruster/d1starboard)
 "kPD" = (
@@ -22755,8 +22737,9 @@
 	dir = 4
 	},
 /obj/structure/bed/chair/comfy/blue,
+/obj/random_multi/single_item/runtime,
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "mlw" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22796,7 +22779,7 @@
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/white,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "mmP" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/corner/research{
@@ -23859,7 +23842,7 @@
 	},
 /obj/machinery/photocopier,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "nDx" = (
 /obj/machinery/door/airlock/medical{
 	name = "Operating Room 2"
@@ -24446,10 +24429,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/security/locker)
 "omb" = (
-/obj/structure/table/standard,
-/obj/item/clothing/accessory/stethoscope,
-/obj/item/device/flashlight/pen,
-/obj/effect/floor_decal/corner/paleblue/mono,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -24458,7 +24437,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/white/monotile,
+/obj/structure/bed/chair/padded/blue,
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white,
 /area/medical/exam_room)
 "onM" = (
 /obj/effect/floor_decal/corner/blue,
@@ -26022,6 +26005,10 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/tiled/white/monotile,
 /area/rnd/xenobiology/xenoflora)
+"qhd" = (
+/obj/structure/sign/warning/hot_exhaust,
+/turf/simulated/wall/ocp_wall,
+/area/thruster/d1port)
 "qib" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/hygiene/sink{
@@ -26383,6 +26370,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
+"qFY" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/thruster/d1starboard)
 "qGb" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/machinery/reagentgrinder,
@@ -27678,9 +27677,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/rnd/xenobiology/xenoflora)
 "rYd" = (
-/obj/machinery/atmospherics/pipe/simple/visible/fuel{
-	dir = 5
-	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/thruster/d1port)
 "rYN" = (
@@ -29099,6 +29095,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
+"tpJ" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	controlled = 0;
+	internal_pressure_bound = 35000;
+	internal_pressure_bound_default = 35000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	use_power = 1
+	},
+/turf/simulated/floor/airless,
+/area/thruster/d1starboard)
 "tqb" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/window/southright{
@@ -29635,9 +29642,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard)
 "uuS" = (
-/obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/curtain/open/bed,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/paleblue{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white,
 /area/medical/exam_room)
 "uvj" = (
 /obj/effect/floor_decal/corner/paleblue{
@@ -30068,8 +30079,6 @@
 /area/command/armoury)
 "vnC" = (
 /obj/effect/floor_decal/corner/paleblue/mono,
-/obj/structure/table/standard,
-/obj/item/paper_bin,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -30080,6 +30089,9 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/structure/table/standard,
+/obj/item/device/flashlight/pen,
+/obj/item/clothing/accessory/stethoscope,
 /turf/simulated/floor/tiled/white/monotile,
 /area/medical/exam_room)
 "vpA" = (
@@ -30607,6 +30619,10 @@
 /obj/item/storage/box/lights/mixed,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/centralport)
+"wLC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
+/turf/simulated/wall/ocp_wall,
+/area/thruster/d1starboard)
 "wMh" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/orange,
@@ -30858,7 +30874,7 @@
 /obj/structure/table/glass,
 /obj/random_multi/single_item/memo_medical,
 /turf/simulated/floor/tiled/white/monotile,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "xBk" = (
 /obj/structure/railing/mapped{
 	dir = 4;
@@ -30955,6 +30971,18 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/assembly/robotics/office)
+"xLj" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	controlled = 0;
+	dir = 1;
+	internal_pressure_bound = 35000;
+	internal_pressure_bound_default = 35000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	use_power = 1
+	},
+/turf/simulated/floor/airless,
+/area/thruster/d1port)
 "xMx" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -31065,7 +31093,7 @@
 /area/rnd/office)
 "xYM" = (
 /turf/simulated/wall/prepainted,
-/area/medical/physicianoffice)
+/area/medical/medpaperworkoffice)
 "ybv" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -50451,7 +50479,7 @@ aHn
 aHn
 cQo
 cQo
-tzg
+iOh
 aJS
 aPU
 cQo
@@ -54271,7 +54299,7 @@ afm
 qLr
 nCb
 omb
-aub
+twz
 avo
 nCb
 awM
@@ -54675,7 +54703,7 @@ afp
 aqR
 nCb
 cbj
-nCb
+aub
 uuS
 nCb
 axB
@@ -56475,7 +56503,7 @@ aaa
 aaa
 abM
 abN
-aci
+qFY
 mEV
 abL
 abL
@@ -56519,7 +56547,7 @@ aSf
 dIA
 bUZ
 wEw
-bvI
+hqs
 xPU
 abM
 aaa
@@ -56677,7 +56705,7 @@ aaa
 aaa
 abM
 abN
-aci
+qFY
 mEV
 abL
 abL
@@ -56721,8 +56749,8 @@ tCu
 nPT
 xaC
 wEw
-bvI
-jbk
+hqs
+xPU
 abM
 aaa
 aaa
@@ -56879,7 +56907,7 @@ aaa
 aaa
 abM
 abN
-aci
+qFY
 mEV
 abL
 abL
@@ -56923,8 +56951,8 @@ aDB
 aDB
 aDB
 wEw
-bvI
-jbk
+hqs
+xPU
 abM
 aaa
 aaa
@@ -57081,7 +57109,7 @@ aaa
 aaa
 abN
 abN
-aci
+qFY
 abN
 mpy
 mpy
@@ -58704,7 +58732,7 @@ aet
 afw
 agw
 aet
-abN
+hkQ
 aaa
 acd
 acd
@@ -58734,7 +58762,7 @@ acd
 acd
 acd
 aaa
-xPU
+hPp
 aPq
 aRg
 aSh
@@ -59300,11 +59328,11 @@ aaa
 aaa
 aaa
 aaa
-abN
+hQd
 abN
 abN
 acp
-add
+kfG
 adI
 aey
 afz
@@ -59346,11 +59374,11 @@ aRj
 aSk
 aSS
 aTo
-aTX
+rYd
 aUm
 xPU
 xPU
-xPU
+qhd
 aaa
 aaa
 aaa
@@ -59502,13 +59530,13 @@ aaa
 aaa
 aaa
 aaa
-abN
-abN
+tpJ
+wLC
 abZ
 acq
 ade
 adJ
-jDX
+dVp
 kPp
 jDX
 ahB
@@ -59546,13 +59574,13 @@ xPU
 aQn
 aRk
 aSl
-aRk
+qDM
 qDM
 aTY
 aUn
 aUy
-xPU
-xPU
+fBP
+xLj
 aaa
 aaa
 aaa
@@ -59704,7 +59732,7 @@ aaa
 aaa
 aaa
 aaa
-abN
+hQd
 abN
 aca
 aca
@@ -59754,7 +59782,7 @@ xPU
 aQo
 aQo
 xPU
-xPU
+qhd
 aaa
 aaa
 aaa

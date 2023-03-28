@@ -84,7 +84,10 @@
 		return ..()
 	var/obj/item/organ/internal/stomach/stomach = internal_organs_by_name[BP_STOMACH]
 	if(stomach)
-		return nutrition + (stomach.ingested.total_volume * 10)
+		var/food_volume = 0
+		for(var/datum/reagent/nutriment/A in stomach.ingested.reagent_list)
+			food_volume += A.volume
+		return nutrition + food_volume * 15
 	return 0 //Always hungry, but you can't actually eat. :(
 
 /mob/living/carbon/human/Stat()
@@ -1104,7 +1107,7 @@
 			QDEL_NULL(z_eye)
 			return
 		var/turf/above = GetAbove(src)
-		if(istype(above) && above.z_flags & ZM_MIMIC_BELOW)
+		if(TURF_IS_MIMICING(above))
 			z_eye = new /atom/movable/z_observer/z_up(src, src)
 			to_chat(src, "<span class='notice'>You look up.</span>")
 			reset_view(z_eye)
@@ -1124,7 +1127,7 @@
 			QDEL_NULL(z_eye)
 			return
 		var/turf/T = get_turf(src)
-		if(T && (T.z_flags & ZM_MIMIC_BELOW) && HasBelow(T.z))
+		if(TURF_IS_MIMICING(T) && HasBelow(T.z))
 			z_eye = new /atom/movable/z_observer/z_down(src, src)
 			to_chat(src, "<span class='notice'>You look down.</span>")
 			reset_view(z_eye)
@@ -1769,10 +1772,13 @@
 		return (!L || L.can_drown())
 	return FALSE
 
-/mob/living/carbon/human/get_breath_from_environment(var/volume_needed = STD_BREATH_VOLUME)
-	var/datum/gas_mixture/breath = ..(volume_needed)
+/mob/living/carbon/human/get_breath_from_environment(var/volume_needed = STD_BREATH_VOLUME, var/atom/location = src.loc)
 	var/turf/T = get_turf(src)
-	if(istype(T) && T.is_flooded(lying) && should_have_organ(BP_LUNGS))
+	var/datum/gas_mixture/breath = ..(volume_needed, location)
+	if(istype(T) && T == location && T.is_flooded(lying) && should_have_organ(BP_LUNGS))
+		//Maybe we could feasibly surface
+		if(!lying && T.above && !T.above.is_flooded() && T.above.CanZPass(src, UP) && can_overcome_gravity())
+			return ..(volume_needed, T.above)
 		var/can_breathe_water = (istype(wear_mask) && wear_mask.filters_water()) ? TRUE : FALSE
 		if(!can_breathe_water)
 			var/obj/item/organ/internal/lungs/lungs = internal_organs_by_name[BP_LUNGS]
